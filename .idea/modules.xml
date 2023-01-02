@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Facebook-Clone-Backend.iml" filepath="$PROJECT_DIR$/.idea/Facebook-Clone-Backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/facebook-clone-service/facebook-clone-service.iml" filepath="$PROJECT_DIR$/facebook-clone-service/facebook-clone-service.iml" />
+    </modules>
+  </component>
+</project>
