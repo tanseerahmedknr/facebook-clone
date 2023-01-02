@@ -5,7 +5,7 @@ The codebase is divided into three branches:
 
 - frontend-ui contains the code for the Next.js frontend application
 - backend-connection contains the code for the Spring Boot backend application
-- application-images contains any images used in the application
+- facebook-clone-window-snippets contains any images used in the application
 
 Tech Stack
 - Spring Boot
