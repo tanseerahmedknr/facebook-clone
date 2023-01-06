@@ -6,8 +6,10 @@ import { IoMdPhotos } from "react-icons/io";
 import { BsEmojiSmile } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addPost } from "../public/src/features/postSlice";
 
-const FACEBOOK_CLONE_ENDPOINT = "";
+const FACEBOOK_CLONE_ENDPOINT = "http://localhost:8080/api/v1/post";
 
 const CreatePosts = () => {
   const { data: session } = useSession();
@@ -17,6 +19,9 @@ const CreatePosts = () => {
 
   // Displaying the selected image and maintaing the state
   const [imageToPost, setImageToPost] = useState(null);
+
+  // useDispatch Hook from redux/toolkit for handling state
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     hiddenFileInput.current.click();
@@ -39,7 +44,7 @@ const CreatePosts = () => {
   // No page refresh
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!inputRef.current.value()) return;
+    if (!inputRef.current.value) return;
 
     const formData = new FormData();
     formData.append("file", imageToPost);
@@ -55,6 +60,7 @@ const CreatePosts = () => {
       })
       .then((response) => {
         inputRef.current.value = "";
+        dispatch(addPost(response.data));
         removeImage();
       })
       .catch((error) => {
