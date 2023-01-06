@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 // calling UI application for that cross-origin, value = URL of application
-@CrossOrigin(value = "http://localhost:3000/")
+@CrossOrigin(value = "http://localhost:3000")
 @RestController
 // v1 is version 1
 @RequestMapping("/api/v1/post")
